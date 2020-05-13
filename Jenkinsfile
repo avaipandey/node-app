@@ -14,6 +14,15 @@ pipeline {
               
             }
         }
+        stage('Pushing Docker Image'){
+            steps{
+               
+                  
+                      sh "docker push  avaipandey/nodeapp:${DOCKER_TAG}"
+                  
+              
+            }
+        }
     }
 }
 
