@@ -28,7 +28,7 @@ pipeline {
         }
          stage('Deploy to GKE Docker Image'){
             steps{
-                 withCredentials([file(credentialsId: 'gkejen', variable: 'gke')]) {
+                 withCredentials([file(credentialsId: 'jacc', variable: 'gke')]) {
                    
                      sh("gcloud auth activate-service-account --key-file ${gke}")
                      sh("gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project robotic-tract-277114")
