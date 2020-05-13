@@ -32,7 +32,7 @@ pipeline {
                    
                      sh("gcloud auth activate-service-account --key-file '${gke}'")
                      sh("gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project robotic-tract-277114")
-                     sh "scp -o StrictHostKeyChecking=no serivces.yaml pods.yaml ."
+                     sh "scp -o StrictHostKeyChecking=no serivces.yml pods.yml ."
                      sh "kubectl apply -f"
                   }
                
