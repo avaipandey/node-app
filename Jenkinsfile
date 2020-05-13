@@ -17,7 +17,7 @@ pipeline {
         stage('Pushing Docker Image'){
             steps{
                
-                       sh "docker login -u avaipandey -p Docker#456456456  avaipandey/nodeapp:${DOCKER_TAG}"
+                       sh "docker login -u avaipandey -p Docker#456456456"
                       sh "docker push  avaipandey/nodeapp:${DOCKER_TAG}"
                   
               
