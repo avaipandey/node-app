@@ -16,9 +16,12 @@ pipeline {
         }
         stage('Pushing Docker Image'){
             steps{
-               
-                       sh "docker login -u avaipandey -p Docker#456456456"
+                withCredentials([string(credentialsId: 'Dockerhub', variable: 'hubpw')]) {
+                    sh "docker login -u avaipandey -p ${hubpw}"
                       sh "docker push  avaipandey/nodeapp:${DOCKER_TAG}"
+                 }
+               
+                   
                   
               
             }
