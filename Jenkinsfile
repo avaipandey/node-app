@@ -8,7 +8,7 @@ pipeline {
         stage('Build Docker Image'){
             steps{
                 withCredentials([string(credentialsId: 'docerpwd', variable: 'dockerpwd')]) {
-                    sh "docker login -u dockeradmin -p dockeradmin"
+                    sh "docker login -u dockeradmin -p dockeradmin1"
                       sh "docker build . -t avaipandey/nodeapp:${DOCKER_TAG}"
                   }
               
