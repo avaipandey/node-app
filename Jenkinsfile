@@ -29,7 +29,7 @@ pipeline {
          stage('Deploy to GKE Docker Image'){
             steps{
                  withCredentials([file(credentialsId: 'gke', variable: 'gke')]) {
-                     sh("gcloud auth activate-service-account kumar.avipandey@gmail.com --key-file=${gke}")
+                     sh("gcloud auth activate-service-account jenkins@robotic-tract-277114.iam.gserviceaccount.com --key-file=${gke}")
                      sh("gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project robotic-tract-277114")
                      sh "kubectl apply -f"
                   }
